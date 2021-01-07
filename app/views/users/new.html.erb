@@ -4,6 +4,15 @@
       <div class="col-md-offset-4 col-md-4 users-new-container">
         <h1 class="text-center text-white">Sign in</h1>
         <%= form_for @user do |f| %>
+          <% if @user.errors.any? %>
+            <div class="alert-warning">
+              <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
           <div class="form-group">
             <%= f.label :name, class: 'text-white' %>
             <%= f.text_field :name, class: 'form-control'  %>

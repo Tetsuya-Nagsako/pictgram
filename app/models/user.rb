@@ -8,4 +8,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8, maximum: 32}, format: { with: VALID_PASSWORD_REGEX, message:"は半角8~32文字英文字・数字それぞれ１文字以上含む必要があります"}
 
   has_secure_password
+  
+  has_many :topics
+  
 end

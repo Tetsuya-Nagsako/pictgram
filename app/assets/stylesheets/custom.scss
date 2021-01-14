@@ -137,5 +137,12 @@ h1, h2 {
       height: 30px;
       margin-left: 20px;
     }
+    
+    .topic-index-icon-red {
+      width: 35px;
+      height: 30px;
+      margin-left: 20px;
+      filter: brightness(50%) sepia(100) saturate(100) hue-rotate(25deg);
+    }
   }
 }

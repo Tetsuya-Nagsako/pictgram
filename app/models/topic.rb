@@ -9,4 +9,8 @@ class Topic < ApplicationRecord
   
   has_many :favorites, dependent: :destroy
   has_many :favorite_users, through: :favorites, source: 'user'
+  
+  def favorite_all_count
+	  self.favorites.count
+  end
 end

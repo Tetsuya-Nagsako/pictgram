@@ -16,11 +16,14 @@
               
             <% else %>
               <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
-              <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
+              <%= image_tag 'icons/heart.png', class: 'topic-index-icon-red' %>
               <% end %>
             <% end %>
             
+            <%= topic.favorite_all_count %>
+            
             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            
             <p class="topic-text">
               <%= topic.description %>
             </p>

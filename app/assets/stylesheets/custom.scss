@@ -138,6 +138,14 @@ h1, h2 {
       margin-left: 20px;
     }
     
+    .topic-index-icon-trash {
+      width: 18px;
+      height: 16px;
+      margin-left: auto;
+      margin-bottom: 14px;
+    }
+    
+    
     .topic-index-icon-red {
       width: 35px;
       height: 30px;
@@ -145,9 +153,9 @@ h1, h2 {
       filter: brightness(50%) sepia(100) saturate(100) hue-rotate(25deg);
     }
     
-    .comment-text {
+    .comment-title {
       padding-right: 20px;
-      padding-left: 20px;
+      padding-left: 18px;
       font-size: 22px;
     }
   }
@@ -156,3 +164,9 @@ h1, h2 {
 .comment-new-wrapper {
   padding-top: 120px;
 }
+
+.comment-text {
+  padding-left:28px;
+}
+
+

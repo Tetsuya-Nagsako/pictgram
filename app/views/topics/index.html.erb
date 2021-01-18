@@ -31,16 +31,19 @@
               <%= topic.description %>
             </p>
             
-            <p class="comment-text">
+            <p class="comment-title">
               コメント
             </p>
-              <% topic.comments.each do |post| %>
-                <ul>
-                <%= post.comment %>
+            
+              <% topic.comments.each do |kome| %>
+                <ul class="comment-text">
+                <%= kome.comment %>
+                <%= link_to comments_path(topic_id: topic.id), method: :delete do %>
+                <%= image_tag 'icons/trash.png', class: 'topic-index-icon-trash' %>
+                <% end %>
                 </ul>
               <% end %>
                 
-            
           </div>
         </div>
       </div>

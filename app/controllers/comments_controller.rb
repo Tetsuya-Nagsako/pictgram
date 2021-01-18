@@ -15,6 +15,17 @@ class CommentsController < ApplicationController
     end
   end
   
+  def destroy
+    comment = Comment.find_by(user_id: current_user.id, topic_id: params[:topic_id])
+    comment.destroy if comment.present?
+    
+    if comment.destroyed?
+      redirect_to topics_path, success: "コメントを削除しました"
+    else
+      redirect_to topics_path, danger: "コメント削除に失敗しました"
+    end
+  end
+  
   private
   def comment_paramas
     params.require(:comment).permit(:comment, :topic_id)

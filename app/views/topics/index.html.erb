@@ -35,10 +35,10 @@
               コメント
             </p>
             
-              <% topic.comments.each do |kome| %>
+              <% topic.comments.each do |comment| %>
                 <ul class="comment-text">
-                <%= kome.comment %>
-                <%= link_to comments_path(topic_id: topic.id), method: :delete do %>
+                <%= comment.comment %>
+                <%= link_to comments_path(comment_id: comment.id), method: :delete do %>
                 <%= image_tag 'icons/trash.png', class: 'topic-index-icon-trash' %>
                 <% end %>
                 </ul>

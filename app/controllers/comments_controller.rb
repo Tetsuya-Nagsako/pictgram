@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    comment = Comment.find_by(user_id: current_user.id, topic_id: params[:topic_id])
+    comment = Comment.find(params[:comment_id])
     comment.destroy if comment.present?
     
     if comment.destroyed?
@@ -28,6 +28,6 @@ class CommentsController < ApplicationController
   
   private
   def comment_paramas
-    params.require(:comment).permit(:comment, :topic_id)
+    params.require(:comment).permit(:comment, :topic_id, :comment_id)
   end
 end

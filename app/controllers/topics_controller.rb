@@ -18,6 +18,17 @@ class TopicsController < ApplicationController
     end
   end
   
+  def destroy
+    topic = Topic.find(params[:topic_id])
+    topic.destroy if topic.present?
+    
+    if topic.destroyed?
+      redirect_to topics_path, success: "投稿したトピックを削除しました"
+    else
+      redirect_to topics_path, danger: "投稿したトピックの削除に失敗しました"
+    end
+  end
+  
 
   private
   def topic_params

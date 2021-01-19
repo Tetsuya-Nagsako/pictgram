@@ -6,6 +6,9 @@
           <div class="topic-index-single">
             <h2 class="topic-author">
               <%= topic.user.name %>
+              <%= link_to topics_path(topic_id: topic.id), method: :delete do %>
+              <%= image_tag 'icons/trash.png', class: 'topic-index-icon-trash' %>
+              <% end %>
             </h2>
             <%= image_tag topic.image.url %>
             

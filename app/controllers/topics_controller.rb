@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:favorite_users, :comment_users)
+    @topics = @topics.order("takephoto DESC")
   end
   
   def new
@@ -32,6 +33,6 @@ class TopicsController < ApplicationController
 
   private
   def topic_params
-    params.require(:topic).permit(:image, :description)
+    params.require(:topic).permit(:image, :description, :takephoto)
   end
 end

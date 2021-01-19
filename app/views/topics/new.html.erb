@@ -14,6 +14,12 @@
             <%= f.text_area :description, class: 'form-control' %>
           </div>
           
+          <div class="form-group">
+            <%= f.label :takephoto %>
+            <%= f.datetime_local_field :takephoto, class: 'form-control' %>
+          </div>
+          
+          
           <% if logged_in? %>
             <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
           <% end %>

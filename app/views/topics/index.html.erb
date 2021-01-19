@@ -31,9 +31,9 @@
             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
             <% end %>
             
-            
             <p class="topic-text">
               <%= topic.description %>
+              <%= topic.takephoto %>
             </p>
             
             <p class="comment-title">
@@ -43,9 +43,12 @@
               <% topic.comments.each do |comment| %>
                 <ul class="comment-text">
                 <%= comment.comment %>
-                <%= link_to comments_path(comment_id: comment.id), method: :delete do %>
-                <%= image_tag 'icons/trash.png', class: 'topic-index-icon-trash' %>
+                <% if current_user.id == comment.user.id %>
+                    <%= link_to comments_path(comment_id: comment.id), method: :delete do %>
+                    <%= image_tag 'icons/trash.png', class: 'topic-index-icon-trash' %>
+                  <% end %>
                 <% end %>
+                
                 </ul>
               <% end %>
                 

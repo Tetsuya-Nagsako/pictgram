@@ -16,4 +16,9 @@ class Topic < ApplicationRecord
   def favorite_all_count
 	  self.favorites.count
   end
+  
+  def shot_at
+    self.takephoto.strftime("%Y/%m/%d %H:%M")
+  end
+  
 end

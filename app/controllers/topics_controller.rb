@@ -20,7 +20,7 @@ class TopicsController < ApplicationController
   end
   
   def destroy
-    topic = Topic.find(params[:topic_id])
+    topic = Topic.find(params[:id])
     topic.destroy if topic.present?
     
     if topic.destroyed?

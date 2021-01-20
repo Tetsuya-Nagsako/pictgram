@@ -33,7 +33,9 @@
             
             <p class="topic-text">
               <%= topic.description %>
-              <%= topic.takephoto %>
+            </p>
+            <p class="topic-text">
+              <%= topic.takephoto.strftime("%Y/%m/%d %H:%M") %>
             </p>
             
             <p class="comment-title">

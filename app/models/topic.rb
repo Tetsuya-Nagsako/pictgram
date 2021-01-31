@@ -21,4 +21,5 @@ class Topic < ApplicationRecord
     self.takephoto.strftime("%Y/%m/%d %H:%M")
   end
   
+  
 end

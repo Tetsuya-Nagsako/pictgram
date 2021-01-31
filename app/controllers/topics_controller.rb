@@ -26,9 +26,29 @@ class TopicsController < ApplicationController
     if topic.destroyed?
       redirect_to topics_path, success: "投稿したトピックを削除しました"
     else
-      redirect_to topics_path, danger: "投稿したトピックの削除に失敗しました"
+      render("topics/edit", danger: "投稿したトピックの削除に失敗しました")
     end
   end
+  
+  def edit
+    @topic = Topic.find(params[:id])
+  end
+  
+  def update
+    @topic = Topic.find(params[:id])
+    @topic.image = topic_params[:image]
+    @topic.description = topic_params[:description]
+    @topic.takephoto = topic_params[:takephoto]
+    
+    if @topic.save
+      redirect_to topics_path, success: "編集したトピックを投稿しました"
+    else
+      flash.now[:danger] = "編集に失敗しました"
+      render :edit
+    end
+  end
+  
+  
   
   private
   def topic_params

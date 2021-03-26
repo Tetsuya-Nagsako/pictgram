@@ -48,8 +48,8 @@
                 <%= comment.comment %>
                 <% if current_user.id == comment.user.id %>
                     <%= link_to comments_path(comment_id: comment.id), method: :delete do %>
-                    <%= image_tag 'icons/trash.png', class: 'topic-index-icon-trash' %>
-                  <% end %>
+                      <%= image_tag 'icons/trash.png', class: 'topic-index-icon-trash' %>
+                    <% end %>
                 <% end %>
                 </ul>
               <% end %>
